@@ -17,87 +17,43 @@ docker build -t my-image .
 docker run my-image
 docker run my-image --input "Hello Docker"
 ```
----
-
-## 🛠 Task 2: Build & Analyze Docker Image
-
-### 🧾 Build from VS Code or Docker Desktop
-
-```bash
-docker build -t my-app:v1 .
-```
 
 
-# Run the Docker image without input
-```
-docker run my-app:v1
-```
+## 🐳 Docker Image Commands Summary
 
-# Run the Docker image with input argument
-```
-docker run my-app:v1 --input "Custom Input"
-```
-
-
-# Run the container interactively with a name and open a terminal
-```
-docker run -it --name my-python-demo my-app:v1 /bin/bash
-```
-
-- This command opens a shell (/bin/bash) inside the container
-
-- Inside the container, explore files and run scripts:
-
-```
-ls
-cd /app
-python app.py
-```
+| **Action**             | **Command**                                         | **Description**                                              |
+|------------------------|------------------------------------------------------|--------------------------------------------------------------|
+| Build Docker image     | `docker build -t my-app:v1 .`                        | This will create a Docker image                             |
+| Run image              | `docker run my-app:v1`                               | Runs the Docker image without container name                |
+| Run with container name| `docker run --name conta1 my-app:v1`                | Runs the image and assigns container name `conta1`          |
+| Interactive run (no name) | `docker run -it my-app:v2`                        | Runs the image interactively without a container name       |
+| Interactive run (with name) | `docker run -it --name conta3 my-app:v2`       | Runs the image interactively and names it `conta3`          |
+| Bash shell inside container | `docker run -it --name conta4 my-app:v4 /bin/bash` | Launches container with `bash` shell for terminal access    |
+| Self-contained Linux   | –                                                    | This provides a self-contained mini Linux environment       |
+| Check container        | –                                                    | Use `docker ps` or `docker inspect`                         |
+| Check working directory| –                                                    | Inside container, use `pwd` or check Dockerfile `WORKDIR`   |
+| Check exec             | `docker exec -it conta4 /bin/bash`                  | Execute bash inside a running container                     |
+| Run Python file        | `python app.py`                                     | Run Python script from inside container terminal            |
+| restart container	     |docker start -ai conta4
+|delete container	     |docker rm conta4
 
 
-## 🧪 Task 3: Dockerfile Experiments
-🔁 Make Changes in Dockerfile
-Comment or modify the CMD line in your Dockerfile to experiment with behavior.
 
-Rebuild the image:
+## 🧪 Docker Learning Tasks
 
-```
-docker build -t my-app:v3 .
-```
-Run the updated image:
+| **Task** | **Topic**           | **Details**                                          |
+|----------|---------------------|-------------------------------------------------------|
+| Task 1   | `python-docker-app` | Project setup                                        |
+|          |                     | Run it locally                                       |
+|          |                     | Test with input and without input                    |
+| Task 2   | Build Image          | Create Docker image                                 |
+|          |                     | Build from VS Code                                  |
+|          |                     | Build from Docker Desktop                           |
+|          |                     | Test with input and without input                    |
+| Task 3   | `docker run`         | Run Docker image                                    |
 
-```
-docker run my-app:v3
-```
-📁 Copy Files from Host to Container
 
-# Copy a Python file from your host machine to the container
-```
-docker cp myscript.py my-python-demo:/app/
-```
-🧹 Container Management
 
-▶️ Start a Stopped Container
-```
-docker start -ai my-python-demo
-```
-❌ Remove/Delete a Container
-```
-docker rm my-python-demo
-```
-📁 Extra: Explore Work Directory & Files
-
-# Open terminal/exec inside container
-```
-docker exec -it my-python-demo /bin/bash
-```
-
-# Navigate and inspect
-```
-cd /app
-ls
-python app.py
-```
 
 🎯 Continue Learning:
 
