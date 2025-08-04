@@ -1,11 +1,7 @@
 # python-docker-app
-Learn docker basics for Machine learning with python code
+Learn docker basics for python code
 
-# 🐳 Docker Learning Lab – Python App
-
-
-
----
+# 🐳 Docker Learning
 
 ## 🧪 Task 1: Create a Python App and Run It with Docker
 
@@ -17,9 +13,9 @@ Learn docker basics for Machine learning with python code
 ### 🧾 Commands
 
 ```bash
-docker build -t python-docker-app .
-docker run python-docker-app
-docker run python-docker-app --input "Hello Docker"
+docker build -t my-image .
+docker run my-image
+docker run my-image --input "Hello Docker"
 ```
 ---
 

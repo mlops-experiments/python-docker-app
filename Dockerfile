@@ -1,15 +1,17 @@
-FROM python:3.9-slim
+# Use the official Python image as a base
+FROM python:3.10-slim
 
+# Set working directory inside container
 WORKDIR /app
 
-RUN pip install --upgrade pip
+# Copy the current directory contents into the container at /app
+COPY app.py ./
+COPY requirements.txt ./
 
-COPY app.py requirements.txt ./
-
+# Install the required packages and dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Run the script
 CMD ["python", "app.py"]
 
-
-
-
+# do not auto run the app, run it manually later, comment above CMD line
