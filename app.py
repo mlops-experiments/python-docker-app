@@ -6,4 +6,4 @@ if __name__ == "__main__":
     name = "World"  # Default value for demonstration
     print(greet(name))
 # Example usage:
-    print(greet("World"))
+    print(greet("world"))
